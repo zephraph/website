@@ -1,38 +1,45 @@
-# sv
+# Justin's Personal Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is yet another incarnation of my personal site. I've taken a bit of a different tack this time. The design is inspired by a TUI (text-based user interface). That means I'm using a single, monospace font and a single font size. Spacing is (mostly) constrainted to the character grid.
 
-## Creating a project
+I'm building everything with SvelteKit and trying to reduce the number of dependencies.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Setup
+
+This project uses [mise](https://mise.jdx.dev/) for development tooling. Install it with:
 
 ```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+curl https://mise.run | sh
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Then install project dependencies:
 
 ```sh
-npm run dev
+mise install
+```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+## Development
+
+Start the development server:
+
+```sh
+mise run dev
 ```
 
 ## Building
 
-To create a production version of your app:
+Create a production build:
 
 ```sh
-npm run build
+mise run build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the production build:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```sh
+mise run preview
+```
+
+## Deployment
+
+This project uses the Cloudflare adapter and can be deployed to Cloudflare Pages.

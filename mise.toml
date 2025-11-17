@@ -32,3 +32,9 @@ run = "prettier --write ."
 
 [tasks."format:check"]
 run = "prettier --check ."
+
+[tasks.deploy]
+run = "alchemy deploy"
+
+[tasks.destroy]
+run = "alchemy destroy"

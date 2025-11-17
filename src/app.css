@@ -1,33 +1,5 @@
-/* 0xProto font */
-@font-face {
-	font-family: '0xProto';
-	src:
-		url('/fonts/0xProto-Regular.woff2') format('woff2'),
-		url('/fonts/0xProto-Regular.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: '0xProto';
-	src:
-		url('/fonts/0xProto-Bold.woff2') format('woff2'),
-		url('/fonts/0xProto-Bold.ttf') format('truetype');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: '0xProto';
-	src:
-		url('/fonts/0xProto-Italic.woff2') format('woff2'),
-		url('/fonts/0xProto-Italic.ttf') format('truetype');
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
+/* IBM Plex Mono font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* Define CSS layers for proper cascade order */
 @layer base, utils, components;
@@ -96,6 +68,8 @@
 	--color-cyan-1: #55ffff;
 	--color-white-0: #aaaaaa;
 	--color-white-1: #ffffff;
+
+	--color-accent: var(--color-blue-0);
 }
 
 /* WebTUI - Base styles and components */
@@ -110,15 +84,15 @@
 /* Monospace font stack for TUI aesthetic */
 :root {
 	font-family:
-		'0xProto', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New',
-		monospace;
+		'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco',
+		'Courier New', monospace;
 }
 
 /* Single font size for true TUI aesthetic */
 * {
 	font-family:
-		'0xProto', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New',
-		monospace;
+		'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco',
+		'Courier New', monospace;
 	font-size: 1rem;
 	line-height: 1.5;
 }

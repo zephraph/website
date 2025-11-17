@@ -1,4 +1,4 @@
-<script module>
+<script module lang="ts">
 	export { default as a } from '~/lib/components/Link.svelte';
 </script>
 

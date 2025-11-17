@@ -28,6 +28,7 @@
 		"vite": "^7.1.10"
 	},
 	"dependencies": {
-		"@webtui/css": "^0.1.5"
+		"@webtui/css": "^0.1.5",
+		"figlet": "^1.9.4"
 	}
 }

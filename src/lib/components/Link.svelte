@@ -1,24 +1,20 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
+	import type { HTMLProps } from 'svelte/svelte-html';
 
-	let {
-		href,
-		target,
-		rel,
-		children,
-	}: {
-		href: string;
-		target?: string;
-		rel?: string;
-		children: Snippet;
-	} = $props();
+	let { children, ...props }: HTMLProps<'a', HTMLAttributes<any>> = $props();
 </script>
 
-<a
-	{href}
-	{target}
-	{rel}
-	class="transition-colors text-blue-0 hover:px-0.5 hover:-ml-0.5 hover:-mr-0.5 font-bold hover:invert hover:bg-0 focus:invert focus-visible:outline-none"
->
+<a {...props} class="text-accent font-bold focus-visible:outline-none">
 	{@render children()}
 </a>
+
+<style>
+	@reference "~/app.css";
+
+	a:hover,
+	a:focus {
+		@apply px-0.5 -mx-0.5 bg-0 invert;
+	}
+</style>

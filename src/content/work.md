@@ -1,6 +1,4 @@
 ---
-layout: resume
-
 # Definitions
 legal_engineer: A lawyer who facilitates the automation of regulatory checks by encoding legal knowledge in an AI automation platform
 ---

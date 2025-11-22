@@ -114,16 +114,14 @@ pre {
 	font-size: 1rem !important;
 }
 
-/* Markdown prose link styles */
-.prose a {
-	transition:
-		color 150ms,
-		background-color 150ms;
+article h1,
+article .date-component,
+article p {
+	margin-bottom: 1lh;
 }
 
-.prose a:hover,
-.prose a:focus-visible {
-	background-color: var(--background1);
-	color: var(--foreground0);
-	outline: none;
+article dfn {
+	text-decoration: underline dotted;
+	cursor: help;
+	font-style: normal;
 }

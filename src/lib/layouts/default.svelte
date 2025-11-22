@@ -6,13 +6,7 @@
 	let { title, children } = $props();
 </script>
 
-<article class="py-8">
-	{#if title}
-		<header class="mb-8 border-b border-gray-700 pb-4">
-			<h1 class="font-bold">{title}</h1>
-		</header>
-	{/if}
-
+<article class="my-[1lh]">
 	<div class="flex flex-col max-w-none">
 		{@render children?.()}
 	</div>

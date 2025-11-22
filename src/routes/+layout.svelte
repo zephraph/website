@@ -15,7 +15,7 @@
 	<Nav />
 
 	<div class="max-w-4xl mx-auto w-full flex-1 flex flex-col">
-		<main class="flex-1">
+		<main id="main-content" class="flex-1 focus:outline-none" tabindex="-1">
 			{@render children()}
 		</main>
 	</div>

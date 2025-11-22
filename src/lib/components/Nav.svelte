@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { bannerVisible } from '$lib/stores/banner';
 	import { Tabs, Tab } from './tabs';
 	import Email from './icons/Email.svelte';
 	import GitHub from './icons/GitHub.svelte';
@@ -16,7 +15,9 @@
 	Skip to main content
 </a>
 
-<nav class="fixed top-0 left-0 right-0 flex items-center bg-1 z-10 h-lh justify-between lg:justify-start">
+<nav
+	class="fixed top-0 left-0 right-0 flex items-center bg-1 z-10 h-lh justify-between lg:justify-start"
+>
 	<Tabs activeHref={page.url.pathname}>
 		<Tab href="/" key="h" label="home" />
 		<Tab href="/blog" key="b" label="blog" />
@@ -25,14 +26,11 @@
 		<Tab href="/work" key="w" label="work" />
 	</Tabs>
 
-	<div
-		class="flex items-center h-lh lg:fixed lg:left-1/2 lg:-translate-x-1/2 lg:z-20"
-		class:opacity-0={$bannerVisible}
-		class:pointer-events-none={$bannerVisible}
-	>
+	<div class="flex items-center h-lh lg:fixed lg:left-1/2 lg:-translate-x-1/2 lg:z-20">
 		<span class="text-fg-0 font-normal">
 			<span class="font-bold">just</span><span class="font-normal text-fg-1 max-md:hidden">in</span>
-			<span class="font-bold">be</span><span class="font-normal text-fg-1 max-md:hidden">nnett</span>
+			<span class="font-bold">be</span><span class="font-normal text-fg-1 max-md:hidden">nnett</span
+			>
 		</span>
 	</div>
 

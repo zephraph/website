@@ -9,6 +9,13 @@
 	import LinkedIn from './icons/LinkedIn.svelte';
 </script>
 
+<a
+	href="#main-content"
+	class="skip-link absolute left-[-9999px] focus:left-0 top-[1lh] bg-1 px-4 py-2 z-50"
+>
+	Skip to main content
+</a>
+
 <nav class="fixed top-0 left-0 right-0 flex items-center bg-1 z-10 h-lh justify-between lg:justify-start">
 	<Tabs activeHref={page.url.pathname}>
 		<Tab href="/" key="h" label="home" />
@@ -86,6 +93,15 @@
 
 	.icon-link:hover,
 	.icon-link:focus-visible {
+		filter: invert(1);
+		outline: none;
+	}
+
+	.skip-link {
+		transition: filter 0.2s;
+	}
+
+	.skip-link:focus {
 		filter: invert(1);
 		outline: none;
 	}

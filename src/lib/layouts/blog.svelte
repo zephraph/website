@@ -4,11 +4,12 @@
 
 <script>
 	import Link from '$lib/components/Link.svelte';
+	import Tag from '$lib/components/Tag.svelte';
 
 	let { title, date, tags = [], children } = $props();
 </script>
 
-<article class="px-4 py-8">
+<article class="py-[2lh] relative">
 	<header class="mb-[1lh]">
 		<h1 class="font-bold mb-0!">{title}</h1>
 		{#if date}
@@ -21,9 +22,9 @@
 			>
 		{/if}
 		{#if tags.length > 0}
-			<div class="flex gap-2">
+			<div class="flex gap-[1ch] absolute right-0 top-[2lh]">
 				{#each tags as tag}
-					<span variant-="accent" class="badge">{tag}</span>
+					<Tag url="/blog" {tag} />
 				{/each}
 			</div>
 		{/if}

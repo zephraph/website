@@ -1,10 +1,36 @@
 <script>
+	import Tag from '$lib/components/Tag.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import { goto } from '$app/navigation';
+
 	let { data } = $props();
+
+	function clearFilter() {
+		goto('/blog');
+	}
 </script>
 
 <div class="px-4 py-12 font-mono">
 	<div class="mb-8">
 		<h1 class="font-bold mb-2">~/blog</h1>
+
+		{#if data.tagCounts.length > 0}
+			<div class="mt-4 flex flex-wrap gap-2 items-center">
+				{#if data.selectedTag}
+					<Tag
+						tag={data.selectedTag}
+						count={data.tagCounts.find((t) => t.tag === data.selectedTag)?.count}
+						url="/blog"
+						aria-label="Clear tag filter"
+					/>
+					<Button onclick={clearFilter} aria-label="Clear tag filter" shortcut="c" label="clear" />
+				{:else}
+					{#each data.tagCounts as { tag, count }}
+						<Tag {tag} {count} url="/blog" />
+					{/each}
+				{/if}
+			</div>
+		{/if}
 	</div>
 
 	{#if data.posts.length > 0}
@@ -35,6 +61,12 @@
 			{/each}
 		</ul>
 	{:else}
-		<p class="text-gray-500">total 0</p>
+		<p class="text-gray-500">
+			{#if data.selectedTag}
+				no posts with tag "{data.selectedTag}"
+			{:else}
+				total 0
+			{/if}
+		</p>
 	{/if}
 </div>

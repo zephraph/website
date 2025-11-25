@@ -13,18 +13,15 @@ declare global {
 // Declare .md files as Svelte components (processed by mdsvex)
 declare module '*.md' {
 	import type { SvelteComponent } from 'svelte';
-	export default class extends SvelteComponent {}
+	const component: typeof SvelteComponent;
+	export default component;
 }
 
 // Support path alias for .md files
-declare module '~/content/home.md' {
+declare module '~/content/*.md' {
 	import type { SvelteComponent } from 'svelte';
-	export default class extends SvelteComponent {}
-}
-
-declare module '~/content/work.md' {
-	import type { SvelteComponent } from 'svelte';
-	export default class extends SvelteComponent {}
+	const component: typeof SvelteComponent;
+	export default component;
 }
 
 // Extend Svelte elements to support custom attributes

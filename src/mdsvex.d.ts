@@ -21,8 +21,20 @@ export interface MarkdownModule {
 }
 
 declare module '~/content/*.md' {
-	const module: MarkdownModule;
-	export default module.default;
+	const component: typeof SvelteComponent;
+	export default component;
+	export const metadata: MarkdownMetadata;
+}
+
+declare module '~/content/home.md' {
+	const component: typeof SvelteComponent;
+	export default component;
+	export const metadata: MarkdownMetadata;
+}
+
+declare module '~/content/work.md' {
+	const component: typeof SvelteComponent;
+	export default component;
 	export const metadata: MarkdownMetadata;
 }
 
